@@ -1,50 +1,64 @@
-let num,num1,num2,num3,num4;
-num2=0;
-num3=1;
-num4=2;
 function getComputerChoice()
 {
-    num= Math.floor(Math.random()*3);
+    const num=Math.floor(Math.random()*3);
+    if(num===0)
     {
-        if(num===num2)
-        {
-            return("Rock")
-        }
-        else if(num===num3)
-        {
-            return("Scissors")
-        }
-        else if(num==num4)
-        {
-            return("Paper")
-        }
+        return "Rock";
+    }
+    if(num===1)
+    {
+        return "Paper";
+    }
+    if(num===2)
+    {
+        return "Scissors";
     }
 }
-console.log(getComputerChoice());
 
 function getHumanChoice()
 {
-    num1=prompt("Enter Your Choice Please!");
-    return num1;
+    const input=prompt("Pick Rock,Paper or Scissors");
+    return input;
 }
-console.log(getHumanChoice());
+
+function scoreTracking()
 {
-    if(num1=="Rock")
-    {
-        num1=0;
-    }
-    else if(num1=="Scissors")
-    {
-        num1=1;
-    }
-    else if(num1=="Paper")
-    {
-        num1=2;
-    }
-}
+let humanScore=0;
+let computerScore=0;
 {
-    if(num1==num2||num1==num3||num1==num4)
+    function playRound(humanChoice,computerChoice)
     {
-        console.log("Draw");
+    const cleanChoice=humanChoice.toLowerCase();
+    const computerChoices=computerChoice.toLowerCase();
+    {
+        if(cleanChoice===computerChoices)
+        {
+            console.log("It's a tie!");
+        }
+        else if(
+        (cleanChoice==="rock"&&computerChoices==="scissors")||
+        (cleanChoice=="scissors"&&computerChoices=="paper")||
+        (cleanChoice=="paper"&&computerChoices=="rock")
+        )
+        {
+            console.log("You Win!");
+            humanScore+=1;
+        }
+        else
+        {
+            console.log("You Lose!")
+            computerScore+=1;
+        }
     }
 }
+}
+    for(let i=0;i<5;i++)
+    {
+        const pChoice=getComputerChoice();
+        const sChoice=getHumanChoice();
+        playRound(sChoice,pChoice);
+    }
+    console.log(`Final Score ->You: ${humanScore} , Computer: ${computerScore}`);
+}
+scoreTracking();
+  
