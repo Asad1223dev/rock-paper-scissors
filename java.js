@@ -37,8 +37,8 @@ let computerScore=0;
         }
         else if(
         (cleanChoice==="rock"&&computerChoices==="scissors")||
-        (cleanChoice=="scissors"&&computerChoices=="paper")||
-        (cleanChoice=="paper"&&computerChoices=="rock")
+        (cleanChoice==="scissors"&&computerChoices==="paper")||
+        (cleanChoice==="paper"&&computerChoices==="rock")
         )
         {
             console.log("You Win!");
