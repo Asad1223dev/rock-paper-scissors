@@ -1,23 +1,27 @@
 # Rock Paper Scissors
 
-A console-based **Rock Paper Scissors** game built with JavaScript.
+An interactive **Rock Paper Scissors** web game built with HTML, CSS, and JavaScript.
+
+## Features
+- **Interactive UI:** Play directly in the browser using **Rock**, **Paper**, and **Scissors** buttons.
+- **Live Score & Feedback:** Tracks `humanScore` and `computerScore` in real time and displays round outcomes and status messages.
+- **First to 5 Wins:** Automatically detects when a player or the computer reaches 5 points, announces the overall winner, and disables choice buttons.
+- **Reset / Play Again:** Resets scores to `0`, clears/updates status text, and re-enables gameplay controls.
+- **Classic Parchment Theme:** Styled with external CSS (`style.css`) and Google Fonts.
 
 ## How It Works
-
-- `getComputerChoice()` uses `Math.random()` and `Math.floor()` to randomly return `"Rock"`, `"Paper"`, or `"Scissors"`.
-- `getHumanChoice()` prompts the user for input (`"Pick Rock,Paper or Scissors"`) and returns the entered value.
-- `scoreTracking()` initializes `humanScore` and `computerScore` at `0`, defines `playRound(humanChoice, computerChoice)` inside its scope, runs a 5-round `for` loop (`i = 0` to `4`), and logs the final score at the end.
-- Inside `playRound()`, both choices are converted to lowercase (`.toLowerCase()`) before checking ties, winning combinations, or losses, updating the score accordingly.
+- `getComputerChoice()` randomly selects `"Rock"`, `"Paper"`, or `"Scissors"` for the computer.
+- Clicking a choice button triggers round evaluation, compares the player's selection against the computer's choice, and updates the live score and result text.
+- A winner check locks the choice buttons once a player reaches `5` points and displays the final match result.
+- Clicking **Play Again** resets `humanScore` and `computerScore` back to `0`, updates the UI text, and unlocks the choice buttons.
 
 ## How to Run and Play
-
-1. Open `index.html` in a browser with `java.js` linked.
-2. Open the browser **Console** (`F12` or `Ctrl + Shift + I` -> **Console**).
-3. Enter `Rock`, `Paper`, or `Scissors` in each prompt across 5 rounds.
-4. View round outcomes and `Final Score ->You: X , Computer: Y` in the console.
+1. Open `index.html` in a web browser (linked with `style.css` and `java.js`).
+2. Click **Rock**, **Paper**, or **Scissors** to play rounds against the computer.
+3. First to reach **5 points** wins the match.
+4. Click **Play Again** anytime to reset the score and start a new match.
 
 ## Future Improvements
-
-- Add overall match winner/loser logic based on `humanScore` and `computerScore`.
-- Handle `null` (when prompt is canceled) or unexpected inputs safely.
-- Build a webpage UI using HTML/CSS and DOM manipulation.
+- Add sound effects or subtle animations for wins, losses, and resets.
+- Add keyboard support (e.g., `R`, `P`, `S` keys) for faster play.
+- Track win streaks or total matches played.
